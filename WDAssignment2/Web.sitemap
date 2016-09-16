@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/default.aspx" title="Home" description="Home"  >
+        <siteMapNode url="~/login.aspx" title="Login" description="Login" >
+            <siteMapNode url="~/Patients.aspx" title="Patients List" description="List of Patients"  />
+            <siteMapNode url="~/Registration.aspx" title="Patient Registration" description="Register a Patient"  />
+            <siteMapNode url="~/Visits.aspx" title="Patient Visits" description="View Patient Visits"  />
+            <siteMapNode url="~/Doctors.aspx" title="Doctors List" description="List of Doctors" />
+            <siteMapNode url="~/Beds.aspx" title="Bed List" description="List of Beds"  />
+            <siteMapNode url="~/DischargeInPatient.aspx" title="Discharge Inpatient" description="Discharge Inpatient" />
+            <siteMapNode url="~/DoctorPatientInfo.aspx" title="Doctor/Patient Info" description ="Doctor/Patient Info"  />
+        </siteMapNode>
+        <siteMapNode url="~/Sitemap.aspx" title="Site Map" description="Site Map"  />
+    </siteMapNode>
+</siteMap>
