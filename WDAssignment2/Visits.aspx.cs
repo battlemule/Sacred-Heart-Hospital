@@ -17,8 +17,8 @@ namespace WDAssignment2
 {
     public partial class Visits : System.Web.UI.Page
     {
-        // On page load redirect if not logged in else
-        // load data into gridview
+        // On page load redirect if not logged in
+        // else load data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session[Global.user] == null)
@@ -31,7 +31,8 @@ namespace WDAssignment2
             }
         }
 
-        // Find and bind search results to grid view
+        // Find and bind search results to grid view based
+        // on radio button choice
         protected void SearchClick(object sender, EventArgs e)
         {
             List<Visit> visits = VisitUtility.GetVisits();
@@ -54,11 +55,13 @@ namespace WDAssignment2
                     if (visit.discharge.ToString().Contains(Search.Text))
                         searchReturn.Add(visit);
 
+            // If results found bind to grid view
             if (searchReturn.Any())
             {
                 GridView1.DataSource = searchReturn;
                 GridView1.DataBind();
             }
+            // If no results found show error
             else
                 ErrorMessage.Visible = true;
 

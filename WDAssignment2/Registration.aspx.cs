@@ -92,11 +92,13 @@ namespace WDAssignment2
                 int visitId = VisitUtility.GetNewId();
                 int visitType;
 
+                // Set visit type to inpatient our outpatient
                 if (RadioButtonList2.SelectedItem.ToString() == "InPatient")
                     visitType = 0;
                 else
                     visitType = 1;
 
+                // Assign doctor and visit date
                 int visitDoctor = int.Parse(doctor.Text);
                 string visitEntry = visit.Text;
                 string visitDischarge = null;
@@ -104,18 +106,24 @@ namespace WDAssignment2
                 // If inpatient
                 if (visitType == 0)
                 {
+                    // Assign bed
                     int visitBed = int.Parse(bed.Text);
                     visitDischarge = discharge.Text;
+
+                    // Create new inVisit object
                     InVisit inVisit = new InVisit(visitId, patient.id, visitType,
                         visitDoctor, visitEntry, visitDischarge, visitBed);
 
+                    // Attempt to add visit to database
                     if (VisitUtility.AddVisit(inVisit))
                     {
+                        // Show message on success
                         VisitErrorMessage.Visible = false;
                         VisitSuccessMessage.Visible = true;
                     }
                     else
                     {
+                        // Show error on failure
                         VisitErrorMessage.Visible = true;
                         VisitSuccessMessage.Visible = false;
                     }
@@ -123,17 +131,23 @@ namespace WDAssignment2
                 // If outpatient
                 else
                 {
+                    // Set discharge date to visit date
                     visitDischarge = visitEntry;
+
+                    // Create new outVisit object
                     OutVisit outVisit = new OutVisit(visitId, patient.id, visitType,
                         visitDoctor, visitEntry, visitDischarge);
 
+                    // Attempt to add visit to database
                     if (VisitUtility.AddVisit(outVisit))
                     {
+                        // Show message on success
                         VisitErrorMessage.Visible = false;
                         VisitSuccessMessage.Visible = true;
                     }
                     else
                     {
+                        // Show error on failure
                         VisitErrorMessage.Visible = true;
                         VisitSuccessMessage.Visible = false;
                     }

@@ -59,12 +59,10 @@
             </div>
 
             <%-- Content --%>
-            <div id="contentWrapper">
-                <div id="content">
-                    <%-- Content Placeholder --%>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"/>
-                </div>
-            </div> 
+            <div id="content">
+                <%-- Content Placeholder --%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"/>
+            </div>
 
         </form>
 

@@ -23,7 +23,7 @@ namespace WDAssignment2
                 Response.Redirect("Login.aspx");
         }
 
-        // Toggle visibility of panels based of radio button selection
+        // Toggle visibility of panels based off radio button selection
         protected void SelectionToggle(object sender, EventArgs e)
         {
             if (SelectionRadioButtonList.SelectedItem.ToString() ==
@@ -41,7 +41,7 @@ namespace WDAssignment2
             }
         }
 
-        // Toggle visibility of inpatient textboxes based of 
+        // Toggle visibility of inpatient textboxes based off 
         // patient type selection
         protected void InpatientToggle(object sender, EventArgs e)
         {
@@ -65,15 +65,22 @@ namespace WDAssignment2
                 int id;
                 if (int.TryParse(e.Value, out id))
                 {
+                    // Get doctor from database with provided id
+                    // using stored procedure
                     Doctor doctor = DoctorUtility.GetDoctor(id);
+
+                    // Valid if found
                     if (doctor != null)
                         e.IsValid = true;
+                    // Invalid if null
                     else
                         e.IsValid = false;
                 }
+                // Invalid if can't parse to int
                 else
                     e.IsValid = false;
             }
+            // Invalid if exception caught
             catch (Exception)
             {
                 e.IsValid = false;

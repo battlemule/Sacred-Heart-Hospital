@@ -18,7 +18,7 @@
     <h1>Doctor Patient Info</h1>
     <p>
     
-        <%-- New of Visit radio button list toggles panel display for forms--%>
+        <%-- Radio button list toggles which panels display for forms--%>
         <asp:RadioButtonList ID="SelectionRadioButtonList" runat="server" AutoPostBack="true" 
                              OnSelectedIndexChanged="SelectionToggle" RepeatDirection="horizontal">
             <asp:ListItem>Assign Doctor</asp:ListItem>

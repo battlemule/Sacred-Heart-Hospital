@@ -17,8 +17,8 @@ namespace WDAssignment2
 {
     public partial class Doctors : System.Web.UI.Page
     {
-        // On page load redirect if not logged in else
-        // load data into gridview
+        // On page load redirect if not logged in
+        // else load data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session[Global.user] == null)

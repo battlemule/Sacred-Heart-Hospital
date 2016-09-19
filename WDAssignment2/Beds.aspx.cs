@@ -16,8 +16,8 @@ namespace WDAssignment2
 {
     public partial class Beds : System.Web.UI.Page
     {
-        // On page load redirect if not logged in else
-        // load data into gridview
+        // On page load redirect if not logged in
+        // else load bed data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Session[Global.user] == null)

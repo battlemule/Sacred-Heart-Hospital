@@ -106,17 +106,23 @@ namespace WDAssignment2
                     PatientId.Enabled = false;
                     // And info submit button
                     InfoSubmitButton.Enabled = false;
+                    // Bind visit to gridview
                     InpatientGridView.DataSource = visit;
                     InpatientGridView.DataBind();
                     InpatientGridView.Visible = true;
+                    // Show discharge panel
                     DischargePanel.Visible = true;
                     AmountOwingLabel.Text = String.Format(
                         "Total Price = ${0}", VisitUtility.GetPrice(visit[0]));
                     AmountOwingLabel.Visible = true;
+                    // Enable pay button
                     PayButton.Visible = true;
                 }
                 else
                 {
+                    // If visit is unable to be found
+                    // display error message and
+                    // hide panels
                     InfoErrorMessage.Visible = true;
                     InpatientGridView.Visible = false;
                     DischargePanel.Visible = false;
@@ -125,6 +131,9 @@ namespace WDAssignment2
             }
             catch (Exception)
             {
+                // If anything went wrong
+                // display error message and
+                // hide panels
                 InfoErrorMessage.Visible = true;
                 InpatientGridView.Visible = false;
                 DischargePanel.Visible = false;
@@ -168,6 +177,7 @@ namespace WDAssignment2
                 // If database update successfull
                 if (VisitUtility.UpdateVisit(update))
                 {
+                    // Show success message
                     PayErrorMessage.Visible = false;
                     PaySuccessMessage.Visible = true;
                     // Disable paybutton
@@ -175,12 +185,14 @@ namespace WDAssignment2
                 }
                 else
                 {
+                    // Show error if not successful
                     PaySuccessMessage.Visible = false;
                     PayErrorMessage.Visible = true;
                 }
             }
             catch (Exception)
             {
+                // Show error message if exception caught
                 PaySuccessMessage.Visible = false;
                 PayErrorMessage.Visible = true;
             }
