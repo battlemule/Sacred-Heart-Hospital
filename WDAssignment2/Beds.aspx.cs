@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- * Beds.aspx.cs                                          v1.0 11/2014
+ * Beds.aspx.cs                                          v1.2 09/2016
  * Sacred Heart Hospital                                Robert Willis
  *
  * Code Behind File for Beds.aspx.
@@ -16,17 +16,33 @@ namespace WDAssignment2
 {
     public partial class Beds : System.Web.UI.Page
     {
-        // On page load redirect if not logged in
-        // else load bed data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session[Global.user] == null)
+            // Hide database error on page load
+            DataBaseError.Visible = false;
+
+            // Hide gridview on page load
+            BedGridView.Enabled = false;
+
+            // Redirect to login page if not logged in
+            if (Session[Global.user] == null)
                 Response.Redirect("Login.aspx");
-            else
+
+            // If logged in attempt to pull data from database
+            try
             {
+                // Bind bed data to gridview
                 List<Bed> beds = BedUtility.GetBeds();
-                GridView1.DataSource = beds;
-                GridView1.DataBind();
+                BedGridView.Enabled = true;
+                BedGridView.DataSource = beds;
+                BedGridView.DataBind();
+            }
+            // If exception caught show database error
+            // and hide gridview
+            catch(Exception)
+            {
+                DataBaseError.Visible = true;
+                BedGridView.Enabled = false;
             }
         }
     }

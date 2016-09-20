@@ -1,5 +1,5 @@
 ﻿<%--*****************************************************************
-    * WDAssignment2.Master                               v1.0 11/2014
+    * WDAssignment2.Master                               v1.2 09/2016
     * Sacred Heart Hospital                             Robert Willis
     *
     * Master page for Sacred Heart Hospital system.
@@ -36,16 +36,19 @@
 <%-- Body --%>
 <body>
 
-    <div id="Wrapper">
+    <%-- Content Wrapper --%>
+    <div id="wrapper">
         <form runat="server">
 
             <%-- Page heading logo and navigation --%>
-            <div id="Header">
+            <div id="header">
 
+                <%-- Logo --%>
                 <div id="logo">
                     <asp:Image ImageUrl="Images\logo.png" AlternateText="logo" runat="server"/>
                 </div>
             
+                <%-- Navigation --%>
                 <div id="navigation">
                     <asp:Menu ID="navMenu" runat="server" CssClass="navMenu" Orientation="Horizontal">
                         <Items>
@@ -65,7 +68,6 @@
             </div>
 
         </form>
-
     </div>
 
 </body>

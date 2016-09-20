@@ -1,5 +1,5 @@
 ﻿<%--*****************************************************************
-    * Beds.aspx                                          v1.0 11/2014
+    * Beds.aspx                                          v1.2 11/2016
     * Sacred Heart Hospital                             Robert Willis
     *
     * Webform showing grid view of all beds in hospital database.
@@ -12,11 +12,29 @@
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
 
     <%-- Page Heading --%>
-    <h1>Beds List</h1>
+    <h2>Beds List</h2>
 
     <%-- Page Content --%>
     <%-- Grid View --%>
-    <asp:GridView id="GridView1" runat="server" />
+    <div id="gridViewTable">
+        <asp:GridView runat="server" ID="BedGridView" AutoGenerateColumns="false">
+            <Columns>
+                <%-- Bed ID --%>
+                <asp:BoundField ShowHeader="true" DataField="id" HeaderText="ID" />
+                <%-- Bed Name --%>
+                <asp:BoundField ShowHeader="true" DataField="name" HeaderText="Name" />
+                <%-- Bed Rate --%>
+                <asp:BoundField ShowHeader="true" DataField="rate" HeaderText="Rate Per Day" />
+                <%-- Bed Type --%>
+                <asp:BoundField ShowHeader="true" DataField="type" HeaderText="Type" />
+            </Columns>
+        </asp:GridView>
+    </div>
+
+    <p>
+        <%-- Database error message --%>
+        <asp:Literal runat="server" ID="DataBaseError" Text="Database Connection Error </br>" Visible="false"/>
+    </p>
 
 <%-- End Content --%>
 </asp:Content>

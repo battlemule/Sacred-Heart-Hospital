@@ -1,65 +1,82 @@
-﻿body {
+﻿/*--*****************************************************************
+    * style.css                                          v1.2 09/2016
+    * Sacred Heart Hospital                             Robert Willis
+    *
+    * Stylings for Sacred Heart Hospital
+    *****************************************************************--*/
+
+/* Global
+---------------------------------------------------------*/
+/* Set content wrapper width */
+#wrapper {
+    width: 1020px;
+	margin:0 auto;
+	background:#fff;
+	position:relative;	
 }
 
-h1, h2, p {
+/* Set site-wide font styling and size */
+h1,h2,h3,h4,h5,h6,p {
     font-family: 'Varela Round', sans-serif;
-    line-height: 20px;
+	line-height: 20px;
 }
-
 h1 {
     font-size: 40px;
 }
-
-h2 {
+ h2 {
     font-size: 30px;
 }
-
 p {
-    font-size: 26px;
+	font-size: 26px;
 }
 
-#sacred {
-    font-size: 40px;
-    color: #B6121B;
-    display: inline;
-    padding: 0;
-    margin: 0 auto;
-}
-
-#wrapper {
-    width:95%;
-    margin:0 auto;
-    position:relative;
-}
-
+/* Header 
+---------------------------------------------------------*/
+/* Give fixed height */
 #header {
+    height:85px;
+    border-bottom: 3px;
+    border-color: #B6121B;
+    border-bottom-style: solid;
+}
+
+/* Position logo within header */
+#logo {
     position: absolute;
-    top: 0px;
     left: 0px;
-    height: 70px;
-    width: 100%;
+    top: 0px;
+    padding-right: 100px;
+}
+#logo img {
+    height: 75px;
+    width: 150px;
 }
 
+/* Navigation
+---------------------------------------------------------*/
+/* Position nav bar in header */
 #navigation {
-    position: absolute;
-    right: 0px;
-    top: 25px;
-    height: 70px;
+    float:right;
+	margin:40px 40px 0 0;
 }
 
-.navMenu {
-    font-size: 24px;
-}
 
+/* Position nav links in nav bar */
 .navMenu li {
-    padding-right: 15px;
+    float:left;
+	margin: 0 0 0 40px;
 }
 
+/* Set font details for navigation links */
 .navMenu li a {
+    font-family: 'Varela Round', sans-serif;
+    text-decoration:none;
+    font-size: 24px;
+	font-weight: bold;
     color: black;
-    padding: 5px;
 }
 
+/* Set border and colour changes on hover */
 .navMenu li a:hover {
     color: #B6121B;
     padding-bottom: 2px;
@@ -68,29 +85,50 @@ p {
     border-bottom-style: solid;
 }
 
-#logo {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 75px;
-    width: 150px;
-    padding-right: 100px;
-}
-#logo img {
-    height: 75px;
-    width: 150px;
-}
-
+/* Content
+---------------------------------------------------------*/
+/* Align content text and margins */
 #content {
-    width: 90%;
-    height: 70%;
-    margin-top: 50px;
-    display:block;
+    text-align:center;
+    margin-top: 30px;
+    display: block;
 }
 
+/* Content page heading alignment*/
 #contentHeading {
     text-align:center;
-    font-size:30px; 
-    line-height: 10%;
-    margin-top:12%;
+    margin-top:10px;
+}
+
+/* Default.aspx
+---------------------------------------------------------*/
+/* Colour the word 'Sacred' on landing page */
+#sacred {
+    font-size: 40px;
+    color: #B6121B;
+    display: inline;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Grid Views
+---------------------------------------------------------*/
+/* Center grid view results */
+#gridViewTable {
+    display: inline-block;
+}
+
+/* Radio Button Lists
+---------------------------------------------------------*/
+/* Center radio button options */
+.radioButtonList {
+    display: inline-block;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+.radioButtonList.horizontal li {
+    display: inline;
+}
+.radioButtonList label {
+    display: inline;
 }
