@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- *  Visit Utility Class                                  v1.0 11/2014
+ *  Visit Utility Class                                  v1.2 09/2016
  *  Sacred Heart Hospital                               Robert Willis
  *  
  *  Defines utility functions for Visit and child classes.
@@ -114,14 +114,15 @@ namespace WDAssignment2.Utility
             {
                 // Attempt new SqlConnection with insert visit command
                 SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
-                SqlCommand comm = new SqlCommand("INSERT INTO Visit (PatientId, PatientType, " +
-                "DoctorId, BedId, DateOfVisit, DateOfDischarge) VALUES (@PatientId, " +
+                SqlCommand comm = new SqlCommand("INSERT INTO Visit (Id, PatientId, PatientType, " +
+                "DoctorId, BedId, DateOfVisit, DateOfDischarge) VALUES (@Id, @PatientId, " +
                 "@PatientType, @DoctorId, @BedId, @DateOfVisit, @DateOfDischarge)");
 
                 comm.CommandType = CommandType.Text;
                 comm.Connection = conn;
 
                 // Add values to parameters being inserted
+                comm.Parameters.AddWithValue("@Id", visit.id);
                 comm.Parameters.AddWithValue("@PatientId", visit.patientId);
                 comm.Parameters.AddWithValue("@PatientType", visit.type);
                 comm.Parameters.AddWithValue("@DoctorId", visit.doctor);
@@ -157,14 +158,15 @@ namespace WDAssignment2.Utility
             {
                 // Attempt new SqlConnection with insert visit command
                 SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
-                SqlCommand comm = new SqlCommand("INSERT INTO Visit (PatientId, PatientType, " +
-                    "DoctorId, DateOfVisit, DateOfDischarge) VALUES (@PatientId, @PatientType, " +
+                SqlCommand comm = new SqlCommand("INSERT INTO Visit (Id,PatientId, PatientType, " +
+                    "DoctorId, DateOfVisit, DateOfDischarge) VALUES (@Id, @PatientId, @PatientType, " +
                     "@DoctorId, @DateOfVisit, @DateOfDischarge)");
 
                 comm.CommandType = CommandType.Text;
                 comm.Connection = conn;
 
                 // Add values to parameters being inserted
+                comm.Parameters.AddWithValue("@Id", visit.id);
                 comm.Parameters.AddWithValue("@PatientId", visit.patientId);
                 comm.Parameters.AddWithValue("@PatientType", visit.type);
                 comm.Parameters.AddWithValue("@DoctorId", visit.doctor);

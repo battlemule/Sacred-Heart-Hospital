@@ -1,5 +1,5 @@
 ﻿<%--*****************************************************************
-    * DischargeInPatient.aspx                            v1.0 11/2014
+    * DischargeInPatient.aspx                            v1.2 09/2016
     * Sacred Heart Hospital                             Robert Willis
     *
     * Webform allowing user to discharge a current inpatient.
@@ -13,36 +13,43 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
 
     <%-- Page Header --%>
-    <h1>Discharge Inpatient</h1>
+    <h2>Discharge Inpatient</h2>
 
     <p>
 
         <%-- As User fills out text box's panels will hide and show based
              on which information is provided --%>
+
         <%-- Patient ID Textbox --%>
         <label for="PatientId">Patient ID:</label>
+        <br />
         <asp:TextBox runat="server" ID="PatientId" ClientIDMode="Static" />
+        <br />
         <%-- Validate text entered --%>
-        <asp:RequiredFieldValidator ID="PatientRequiredValidator" runat="server" ForeColor="#B6121B" Width="100"
-                                    ErrorMessage="Patient Required" ControlToValidate="PatientId" Display="dynamic"/>
+        <asp:RequiredFieldValidator ID="PatientRequiredValidator" runat="server" ForeColor="#B6121B" Width="300"
+                                    ErrorMessage="Patient ID Required" ControlToValidate="PatientId" Display="dynamic"/>
         <%-- Validate string is of form "111" (at least 1 number, max 3) --%>
-        <asp:RegularExpressionValidator ID="PatientRegexValidator" runat="server" ForeColor="#B6121B" Width="100"
+        <asp:RegularExpressionValidator ID="PatientRegexValidator" runat="server" ForeColor="#B6121B" Width="300"
                                         ErrorMessage="Input Incorrect. Numbers only, 3 Numbers Max." ControlToValidate="PatientId"
                                         ValidationExpression="^[1-9]{1,3}$" Display="Dynamic" />
-        <%-- Validate Patient Exists and is current inpatient--%>
-        <asp:CustomValidator ID="PatientIdValidator" runat="server" ForeColor="#B6121B" Width="100"
-                             ErrorMessage="Patient ID does not exist." ControlToValidate="PatientId"
+        <%-- Validate Patient Exists --%>
+        <asp:CustomValidator ID="PatientIdValidator" runat="server" ForeColor="#B6121B" Width="400"
+                             ErrorMessage="Patient ID Does Not Exist." ControlToValidate="PatientId"
                              OnServerValidate="PatientIdValidate" Display="Dynamic"/>
+        <%-- Validate Patient is current inpatient--%>
+        <asp:CustomValidator ID="InpatientValidator" runat="server" ForeColor="#B6121B" Width="300"
+                             ErrorMessage="Not Current Inpatient." ControlToValidate="PatientId"
+                             OnServerValidate="InpatientValidate" Display="Dynamic"/>
         <br />
 
         <%-- Submit Button --%>
         <asp:Button runat="server" ID="InfoSubmitButton" OnClick="InfoClick" Text="Search" />
+        <br />
 
-        <%-- Error Message --%>
-        <asp:Literal runat="server" ID="InfoErrorMessage" Text="No Patients Found. </br>" Visible="false"/>
+    </p>
 
-
-        <%-- If successfull show results panel with gridview --%>
+    <%-- If successfull show results panel with gridview --%>
+    <div id="gridViewTable">
         <%-- Results Gridview --%>
         <asp:GridView runat="server" ID="InpatientGridView" Visible="false" AutoGenerateColumns="false">
             <Columns>
@@ -88,9 +95,13 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+    </div>
 
-        <br/>
 
+    <br/>
+    <br />
+    
+    <p>    
         <%-- Amount owing label --%>
         <asp:Label runat="server" ID="AmountOwingLabel" Visible="false"/>
 
@@ -102,21 +113,25 @@
 
             <%-- Credit Card Number --%>
             <label for="CCNumber">Credit Card Number:</label>
+            <br />
             <asp:TextBox runat="server" ID="CCNumber" ClientIDMode="Static" />
             <br />
 
             <%-- Credit Card Name --%>
             <label for="CCName">Credit Card Name:</label>
+            <br />
             <asp:TextBox runat="server" ID="CCName" ClientIDMode="Static" />
             <br />
 
             <%-- Credit Card Expiry --%>
             <label for="CCExpiry">Credit Card Expiry:</label>
+            <br />
             <asp:TextBox runat="server" ID="CCExpiry" ClientIDMode="Static" />
             <br />
 
             <%-- Credit Card CSV --%>
             <label for="CSV">Credit Card CSV:</label>
+            <br />
             <asp:TextBox runat="server" ID="CSV" ClientIDMode="Static" />
             <br />
 
@@ -127,6 +142,8 @@
 
         <%-- Pay Now Button --%>
         <asp:Button runat="server" ID="PayButton" Text="Pay Now" ClientIDMode="Static" OnClick="PayClick" Visible="false"/>
+        <br />
+        <br />
         <%-- Error Message --%>
         <asp:Literal runat="server" ID="PayErrorMessage" Text="Payment Failed. </br>" Visible="false"/>
         <%-- Success Message --%>

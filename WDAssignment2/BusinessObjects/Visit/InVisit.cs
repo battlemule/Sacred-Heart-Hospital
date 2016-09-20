@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- *  InVisit Class                                        v1.0 11/2014
+ *  InVisit Class                                        v1.2 09/2016
  *  Sacred Heart Hospital                               Robert Willis
  *  
  *  Parent Class Visit. One instance created for each inpatient

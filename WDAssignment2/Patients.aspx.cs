@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- * Patients.aspx.cs                                      v1.0 11/2014
+ * Patients.aspx.cs                                      v1.2 09/2016
  * Sacred Heart Hospital                                Robert Willis
  *
  * Code Behind File for Patients.aspx.
@@ -17,25 +17,45 @@ namespace WDAssignment2
 {
     public partial class Patients : System.Web.UI.Page
     {
-        // On page load redirect if not logged in
-        // else load data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Hide database error on page load
+            DataBaseError.Visible = false;
+
+            // Enable submit button on page load
+            SubmitButton.Enabled = true;
+
+            // Redirect to login if not logged in
             if (Session[Global.user] == null)
                 Response.Redirect("Login.aspx");
-            else
+
+            // If logged in attempt to pull data from database
+            try
             {
+                // Bind patient data to gridview
                 List<Patient> patients = PatientUtility.GetPatients();
-                GridView1.DataSource = patients;
-                GridView1.DataBind();
+                PatientGridView.DataSource = patients;
+                PatientGridView.DataBind();
             }
+            // If exception caught show database error and
+            // disable submit button
+            catch(Exception)
+            {
+                DataBaseError.Visible = true;
+                SubmitButton.Enabled = false;
+            }
+
         }
 
         // Find and bind search results to grid view
         protected void SearchClick(object sender, EventArgs e)
         {
+
             List<Patient> patients = PatientUtility.GetPatients();
             List<Patient> searchReturn = new List<Patient>();
+
+            // Hide result not found error message
+            NotFoundError.Visible = false;
 
             // Check input name against list of patients
             foreach (Patient patient in patients)
@@ -45,12 +65,12 @@ namespace WDAssignment2
             // Bind to grid view if any result found
             if (searchReturn.Any())
             {
-                GridView1.DataSource = searchReturn;
-                GridView1.DataBind();
+                PatientGridView.DataSource = searchReturn;
+                PatientGridView.DataBind();
             }
             // Show error message if no results found
             else
-                ErrorMessage.Visible = true;
+                NotFoundError.Visible = true;
 
         }
     }

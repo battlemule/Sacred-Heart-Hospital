@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WDAssignment2
-{
-
-
-    public partial class DoctorPatientInfo
-    {
-
+namespace WDAssignment2 {
+    
+    
+    public partial class DoctorPatientInfo {
+        
         /// <summary>
         /// SelectionRadioButtonList control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList SelectionRadioButtonList;
-
+        
         /// <summary>
         /// AssignDoctorPanel control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel AssignDoctorPanel;
-
+        
         /// <summary>
         /// DoctorId control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DoctorId;
-
+        
         /// <summary>
         /// DoctorRequiredValidator control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator DoctorRequiredValidator;
-
+        
         /// <summary>
         /// DoctorRegexValidator control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator DoctorRegexValidator;
-
+        
         /// <summary>
         /// DoctorIdValidator control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator DoctorIdValidator;
-
+        
         /// <summary>
         /// PatientId control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PatientId;
-
+        
         /// <summary>
         /// PatientRequiredValidator control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PatientRequiredValidator;
-
+        
         /// <summary>
         /// PatientRegexValidator control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator PatientRegexValidator;
-
+        
         /// <summary>
         /// PatientIdValidator control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator PatientIdValidator;
-
+        
         /// <summary>
         /// PatientBusyValidator control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator PatientBusyValidator;
-
+        
         /// <summary>
         /// PatientTypeRadioButtonList control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList PatientTypeRadioButtonList;
-
+        
         /// <summary>
         /// InpatientPanel control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel InpatientPanel;
-
+        
         /// <summary>
         /// Bed control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Bed;
-
+        
         /// <summary>
         /// BedRequiredValidator control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator BedRequiredValidator;
-
+        
         /// <summary>
         /// BedRegexValidator control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator BedRegexValidator;
-
+        
         /// <summary>
         /// BedIdValidator control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator BedIdValidator;
-
+        
         /// <summary>
         /// AssignSubmit control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AssignSubmit;
-
+        
         /// <summary>
         /// AssignSuccess control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal AssignSuccess;
-
+        
         /// <summary>
         /// AssignFail control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal AssignFail;
-
+        
         /// <summary>
         /// DoctorInfoPanel control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel DoctorInfoPanel;
-
+        
         /// <summary>
         /// DoctorId1 control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DoctorId1;
-
+        
         /// <summary>
         /// DoctorIdRequiredValidator1 control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator DoctorIdRequiredValidator1;
-
+        
         /// <summary>
         /// DoctorRegexValidator1 control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator DoctorRegexValidator1;
-
+        
         /// <summary>
         /// DoctorIdValidator1 control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator DoctorIdValidator1;
-
+        
         /// <summary>
         /// InfoSubmitButton control.
         /// </summary>
@@ -247,7 +245,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button InfoSubmitButton;
-
+        
         /// <summary>
         /// InfoErrorMessage control.
         /// </summary>
@@ -256,7 +254,16 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal InfoErrorMessage;
-
+        
+        /// <summary>
+        /// DatabaseError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DatabaseError;
+        
         /// <summary>
         /// DoctorPatientGridView control.
         /// </summary>

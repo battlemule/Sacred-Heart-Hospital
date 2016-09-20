@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- *  Patient Utility Class                                v1.0 11/2014
+ *  Patient Utility Class                                v1.2 09/2016
  *  Sacred Heart Hospital                               Robert Willis
  *  
  *  Defines utility functions for Patient class.
@@ -99,14 +99,15 @@ namespace WDAssignment2.Utility
             {
                 // Attempt new SqlConnection with insert patient command
                 SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
-                SqlCommand comm = new SqlCommand("INSERT INTO Patient (Name, Address, " +
+                SqlCommand comm = new SqlCommand("INSERT INTO Patient (Id, Name, Address, " +
                 "DateOfBirth, Phone, EmergencyContact, DateOfRegistration) VALUES " +
-                "(@name, @Address, @DateOfBirth, @Phone, @EmergencyContact, @DateOfRegistration)");
+                "(@Id, @Name, @Address, @DateOfBirth, @Phone, @EmergencyContact, @DateOfRegistration)");
 
                 comm.CommandType = CommandType.Text;
                 comm.Connection = conn;
 
                 // Add values to parameters being inserted
+                comm.Parameters.AddWithValue("@id", patient.id);
                 comm.Parameters.AddWithValue("@Name", patient.name);
                 comm.Parameters.AddWithValue("@Address", patient.address);
                 comm.Parameters.AddWithValue("@DateOfBirth", patient.birthdate);

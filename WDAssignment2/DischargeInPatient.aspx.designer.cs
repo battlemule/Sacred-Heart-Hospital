@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WDAssignment2
-{
-
-
-    public partial class DischargeInPatient
-    {
-
+namespace WDAssignment2 {
+    
+    
+    public partial class DischargeInPatient {
+        
         /// <summary>
         /// PatientId control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PatientId;
-
+        
         /// <summary>
         /// PatientRequiredValidator control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator PatientRequiredValidator;
-
+        
         /// <summary>
         /// PatientRegexValidator control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator PatientRegexValidator;
-
+        
         /// <summary>
         /// PatientIdValidator control.
         /// </summary>
@@ -49,7 +47,16 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator PatientIdValidator;
-
+        
+        /// <summary>
+        /// InpatientValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator InpatientValidator;
+        
         /// <summary>
         /// InfoSubmitButton control.
         /// </summary>
@@ -58,16 +65,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button InfoSubmitButton;
-
-        /// <summary>
-        /// InfoErrorMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal InfoErrorMessage;
-
+        
         /// <summary>
         /// InpatientGridView control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView InpatientGridView;
-
+        
         /// <summary>
         /// AmountOwingLabel control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label AmountOwingLabel;
-
+        
         /// <summary>
         /// DischargePanel control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel DischargePanel;
-
+        
         /// <summary>
         /// CCNumber control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CCNumber;
-
+        
         /// <summary>
         /// CCName control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CCName;
-
+        
         /// <summary>
         /// CCExpiry control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CCExpiry;
-
+        
         /// <summary>
         /// CSV control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CSV;
-
+        
         /// <summary>
         /// PayButton control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button PayButton;
-
+        
         /// <summary>
         /// PayErrorMessage control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace WDAssignment2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal PayErrorMessage;
-
+        
         /// <summary>
         /// PaySuccessMessage control.
         /// </summary>

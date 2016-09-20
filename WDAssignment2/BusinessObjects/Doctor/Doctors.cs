@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- *  Doctor Class                                         v1.0 11/2014
+ *  Doctor Class                                         v1.2 09/2016
  *  Sacred Heart Hospital                               Robert Willis
  *  
  *  Definition of Doctor class. Created and stored one instance for

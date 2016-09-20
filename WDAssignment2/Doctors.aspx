@@ -1,5 +1,5 @@
 ﻿<%--*****************************************************************
-    * Doctors.aspx                                       v1.0 11/2014
+    * Doctors.aspx                                       v1.2 09/2016
     * Sacred Heart Hospital                             Robert Willis
     *
     * Webform showing grid view of all doctors in hospital database.
@@ -15,8 +15,27 @@
     <h1>Doctors List</h1>
     
     <%-- Page Content --%>
+
     <%-- Grid View --%>
-    <asp:GridView id="GridView1" runat="server" />
+    <div id="gridViewTable">
+        <asp:GridView runat="server" ID="DoctorGridView" AutoGenerateColumns="false">
+            <Columns>
+                <%-- Doctor ID --%>
+                <asp:BoundField ShowHeader="true" DataField="id" HeaderText="ID" />
+                <%-- Doctor Name --%>
+                <asp:BoundField ShowHeader="true" DataField="name" HeaderText="Name" />
+                <%-- Doctor Address --%>
+                <asp:BoundField ShowHeader="true" DataField="address" HeaderText="Address" />
+                <%-- Doctor Phone --%>
+                <asp:BoundField ShowHeader="true" DataField="phone" HeaderText="Phone" />
+            </Columns>
+        </asp:GridView>
+    </div>
+    
+    <p>
+        <%-- Database error message --%>
+        <asp:Literal runat="server" ID="DataBaseError" Text="Database Connection Error </br>" Visible="false"/>
+    </p>
 
 <%-- End Content --%>
 </asp:Content>

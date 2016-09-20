@@ -1,5 +1,5 @@
 ﻿/********************************************************************
- * Doctors.aspx.cs                                       v1.0 11/2014
+ * Doctors.aspx.cs                                       v1.2 09/2016
  * Sacred Heart Hospital                                Robert Willis
  *
  * Code Behind File for Doctors.aspx.
@@ -17,18 +17,34 @@ namespace WDAssignment2
 {
     public partial class Doctors : System.Web.UI.Page
     {
-        // On page load redirect if not logged in
-        // else load data into gridview
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Hide database error on page load
+            DataBaseError.Visible = false;
+
+            // Hide gridview on page load
+            DoctorGridView.Enabled = false;
+
+            // Redirect to login page if not logged in
             if (Session[Global.user] == null)
                 Response.Redirect("Login.aspx");
-            else
+
+            // If logged in attempt to pull data from database
+            try
             {
+                // Bind doctor data to gridview
                 List<Doctor> doctors = DoctorUtility.GetDoctors();
-                GridView1.DataSource = doctors;
-                GridView1.DataBind();
+                DoctorGridView.DataSource = doctors;
+                DoctorGridView.DataBind();
             }
+            // If exception caught show database error
+            // and hide gridview
+            catch (Exception)
+            {
+                DataBaseError.Visible = true;
+                DoctorGridView.Enabled = false;
+            }
+
         }
     }
 }
