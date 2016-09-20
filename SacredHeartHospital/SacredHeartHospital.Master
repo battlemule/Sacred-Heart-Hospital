@@ -1,0 +1,74 @@
+﻿<%--*****************************************************************
+    * SacredHeartHospital.Master                               v1.2 09/2016
+    * Sacred Heart Hospital                             Robert Willis
+    *
+    * Master page for Sacred Heart Hospital system.
+    *****************************************************************--%>
+<%@ Master Language="C#" AutoEventWireup="true" 
+    CodeBehind="SacredHeartHospital.master.cs" Inherits="SacredHeartHospital.SacredHeartHospital" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%-- Header --%>
+<head runat="server">
+
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+        <%-- Stylesheet --%>
+        <link href="Style/style.css" rel="stylesheet" type="text/css"/>
+
+        <%-- Font --%>
+        <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
+
+        <%-- JQuery Imports--%>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+        <%-- JQuery Validation --%>
+        <script src="Scripts/ValidateCC.js" type="text/javascript"></script>
+
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<%-- Body --%>
+<body>
+
+    <%-- Content Wrapper --%>
+    <div id="wrapper">
+        <form runat="server">
+
+            <%-- Page heading logo and navigation --%>
+            <div id="header">
+
+                <%-- Logo --%>
+                <div id="logo">
+                    <asp:Image ImageUrl="Images\logo.png" AlternateText="logo" runat="server"/>
+                </div>
+            
+                <%-- Navigation --%>
+                <div id="navigation">
+                    <asp:Menu ID="navMenu" runat="server" CssClass="navMenu" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Site Map" Value="Site Map" NavigateUrl="~/Sitemap.aspx"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu> 
+                </div>
+
+            </div>
+
+            <%-- Content --%>
+            <div id="content">
+                <%-- Content Placeholder --%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"/>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
