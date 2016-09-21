@@ -50,6 +50,7 @@ Beds.aspx
 - Fetches all current beds from associated database and displays
   in a grid view
 - Does not take input
+
 ----------------------------------
 DischargeInPatient.aspx
 ----------------------------------
