@@ -1,7 +1,7 @@
-# Sacred-Heart-Hospital
-Hospital Billing and Doctor/Patient Information System
-Author: Robert Willis Email: robert@robertgwillis.com 
-v1.2 09/2016
+# Sacred-Heart-Hospital<br />
+Hospital Billing and Doctor/Patient Information System<br />
+Author: Robert Willis Email: robert@robertgwillis.com <br />
+v1.2 09/2016<br />
 
 ==================================================================
 Sacred Heart Hospital Billing System
